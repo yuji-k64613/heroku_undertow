@@ -1,5 +1,9 @@
 ---
 applications:
 - name: heroku_undertow
-  instances: 1
-  memory: 64M
+  #instances: 1
+  #memory: 64M
+  #command: java -jar ./build/libs/heroku_undertow.jar 
+  path: ./build/libs/heroku_undertow.jar
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git
