@@ -3,4 +3,4 @@ applications:
 - name: heroku_undertow
   instances: 1
   memory: 64M
-  command: java -jar ./build/libs/heroku_undertow.jar
+  #command: java -jar ./build/libs/heroku_undertow.jar
