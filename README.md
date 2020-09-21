@@ -18,3 +18,24 @@ orbs:
 参考URL
 * https://circleci.com/orbs/registry/orb/circleci/heroku
 * https://dashboard.heroku.com/account
+
+## Slackへの通知
+* Slack integrationにCircleCI appを追加
+* SlackのWebhook URLを取得
+* CircleCIのProject Settings、Slack IntegrationにWebhook URLを設定
+* config.ymlに以下を追加
+
+```
+orbs:
+  slack: circleci/slack@3.4.2
+```
+
+```
+- slack/notify:
+	color: "#42e2f4"
+	mentions: "circleci,"
+	message: A custom message to notify the channel about the latest build
+- slack/status:
+	fail_only: true
+	mentions: "circleci"
+```
